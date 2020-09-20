@@ -33,11 +33,8 @@ namespace DesktopContactsApp
                 Email = emailTextBox.Text,
                 Phone = phoneTextBox.Text
             };
-            string databaseName = "contacts.db";
-            string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string databasePath = System.IO.Path.Combine(folderPath, databaseName);
 
-            using (SQLiteConnection conn = new SQLiteConnection(databasePath))
+            using (SQLiteConnection conn = new SQLiteConnection(App.databasePath))
             {
                 conn.CreateTable<Contact>();
                 conn.Insert(newContact);
