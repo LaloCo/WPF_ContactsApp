@@ -48,6 +48,7 @@ namespace DesktopContactsApp
 
             if(contacts != null)
             {
+                //contactsListView.Items.Clear();
                 //foreach(var contact in contacts)
                 //{
                 //    contactsListView.Items.Add(new ListViewItem()
