@@ -25,10 +25,17 @@ namespace DesktopContactsApp
             InitializeComponent();
 
             this.selectedContact = selectedContact;
+            nameTextBox.Text = this.selectedContact.Name;
+            emailTextBox.Text = this.selectedContact.Email;
+            phoneTextBox.Text = this.selectedContact.Phone;
         }
 
         private void updateButton_Click(object sender, RoutedEventArgs e)
         {
+            selectedContact.Name = nameTextBox.Text;
+            selectedContact.Phone = phoneTextBox.Text;
+            selectedContact.Email = emailTextBox.Text;
+
             using (SQLiteConnection conn = new SQLiteConnection(App.databasePath))
             {
                 conn.CreateTable<Contact>();
